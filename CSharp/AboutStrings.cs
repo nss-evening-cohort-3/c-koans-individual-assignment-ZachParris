@@ -62,8 +62,8 @@ namespace DotNetKoans.CSharp
             var verbatimString = @"I
 am a
 broken line";
-            Assert.Equal(18, verbatimString.Length);
-            var literalString ="I\nam a\nbroken line";
+            Assert.Equal(20 , verbatimString.Length);
+            var literalString = "I\r\nam a\r\nbroken line";
             Assert.Equal(literalString, verbatimString);
         }
 
@@ -74,11 +74,8 @@ broken line";
             //(\r\n for Windows, \n for Linux) you shouldn't just type in
             //the hardcoded escape sequence. A much better way
             //(We'll handle concatenation and better ways of that in a bit)
-            //var literalString = "I" + System.Environment.NewLine + "am a" + System.Environment.NewLine + "broken line";
-            var literalString = "I\nam a\nbroken line";
-            var vebatimString = @"I
-am a
-broken line";
+            var literalString = "I" + System.Environment.NewLine + "am a" + System.Environment.NewLine + "broken line";
+            var vebatimString = "I\r\nam a\r\nbroken line";
             Assert.Equal(literalString, vebatimString);
         }
 
